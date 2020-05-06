@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Agenda de tareas</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- Cabecera -->
+
+    <header class="heading text-center text-white bg-dark p-4">
+        <h1>AGENDA DE TAREAS</h1>
+
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 m-auto">
+                    <div class="card mb-6 mt-4">
+                        <div class="card-header bg-person1 text-center">
+                            <h3> Añadir Tarea</h3>
+                        </div>
+                        <div class="card-body">
+                            <input id="input-tarea" type="text" placeholder="Añadir una tarea" class="form-control">
+                            <select id="prioridad" class="form-control my-2" name="">
+                                <option value="">Tipo de prioridad</option>
+                                <option value="diaria">Diaria</option>
+                                <option value="mensual">Mensual</option>
+                                <option value="prioritaria">Prioritaria</option>
+                            </select>
+                            <button id="btn-add" class="btn btn-dark btn-block mt-3">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12 m-auto">
+                    <div class="card mb-6 mt-4">
+                        <div class="card-header bg-person1 text-center">
+                            <h3>Buscar Tarea</h3>
+                        </div>
+                        <div class="card-body d-inline">
+                            <input type="text" id="search" placeholder="Que se te ha perdido" class="form-control">
+
+                            <button id="btn-buscar" class="btn btn-dark btn-block mt-2">Buscar</button>
+
+                            <select class="form-control my-2 mt-2" name="" id="tareas">
+                                <option value="">Selecciona una prioridad</option>
+                                <option value="diaria">Diaria</option>
+                                <option value="mensual">Mensual</option>
+                                <option value="prioritaria">Prioritaria</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="container mt-3">
+            <div class="row">
+                <div class="container">
+                    <div class="col-12">
+                        <h2 class="text-center"> Lista de tareas </h2>
+                        <ul id="lista-tareas">
+                            <!-- <li data-id="x" class="row bg-primary p-3 mb-2">
+                                <h3 class="col-10">Tarea</h3>
+                                <a class="btn btn-dark col-2" href="">Eliminar</a>
+                            </li>
+                            <li class="row bg-warning p-3 mb-2">
+                                <h3 class="col-10">Tarea</h3>
+                                <a class="btn btn-dark col-2" href="">Eliminar</a>
+                            </li>
+                            <li class="row bg-danger p-3 mb-2">
+                                <h3 class="col-10">Tarea</h3>
+                                <a class="btn btn-dark col-2" href="">Eliminar</a>
+                            </li> -->
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--  <section class="row container bg-primary mt-4 ">
+            <article id="id-tarea" class="col-8 bg-primary p-3 d-flex align-items-center">
+                <p>sdsd</p>
+
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-dark">Editar</button>
+                    <button type="button" class="btn btn-dark">Eliminar</button>
+
+            </article>
+
+        </section> -->
+
+
+    </main>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="./js/agenda.js"></script>
+</body>
+
+</html>
