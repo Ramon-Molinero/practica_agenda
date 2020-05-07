@@ -40,7 +40,7 @@ busqueda.addEventListener('keyup', (event) => {
 
 })
 
-btnBuscar.addEventListener('click', buscarTarea)
+//btnBuscar.addEventListener('click', buscarTarea)
 
 btnAnadir.addEventListener('click', anadirTarea)
 
