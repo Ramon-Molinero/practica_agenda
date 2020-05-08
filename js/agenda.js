@@ -36,3 +36,29 @@ let arrayTareas = new Array({
     'titulo': 'Salir a comer',
     'prioridad': 'mensual'
 });
+
+
+// añadimos tarea, condicional de creacion y suma array, mostramos alerta si los campos no estan rellenos
+function anadirTarea() {
+    let inputNuevaTarea = inputAnadirTarea.value;
+    let prioridadTarea = selectorAnadirTarea.value;
+
+
+    if (inputNuevaTarea != '' && prioridadTarea != '') {
+        idTarea++
+        alerta.style.display = 'none';
+        let tarea = {
+            idtarea: idTarea,
+            titulo: inputNuevaTarea,
+            prioridad: prioridadTarea
+        }
+        arrayTareas.push(tarea)
+        mostrarTarea(tarea);
+
+    } else {
+        alerta.style.display = 'block';
+    }
+    inputAnadirTarea.value = ''; // Resetea busqueda
+    selectorAnadirTarea.selectedIndex = 0; // Resetea a posicion inicial del selector
+
+}
