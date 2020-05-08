@@ -22,6 +22,12 @@ let btnAnadirTarea = document.getElementById('btn-add');
 let inputAnadirTarea = document.querySelector('#input-tarea');
 let selectorAnadirTarea = document.querySelector('#prioridad');
 
+// buscar tarea
+let inputBuscarTarea = document.querySelector('#search');
+let selectorBuscarTarea = document.querySelector('#buscar-prioridad');
+
+selectorBuscarTarea.addEventListener('change', filtrarPrioridad);
+
 // array tareas
 let arrayTareas = new Array({
     'idtarea': 0,
@@ -36,6 +42,15 @@ let arrayTareas = new Array({
     'titulo': 'Salir a comer',
     'prioridad': 'mensual'
 });
+
+// array del selector de tareas
+var arraySelectorTareas = new Array();
+
+// contador id tarea
+var idTarea = 0;
+
+// ul a mostrar en html
+var ul = document.getElementById('lista-tareas');
 
 //capturar eventos que necesitamos
 
@@ -120,6 +135,27 @@ function mostrarTodasTarea(listaTareas) {
     ul.innerHTML = '';
     for (tarea of listaTareas) {
         mostrarTarea(tarea)
+    }
+
+}
+
+// filtramos tarea por palabra comparandola con el array y si esta incluida la metemos en un filtro y despues lo mostramos
+function filtrarTarea(event) {
+    let arrayFiltroTareas = new Array();
+    let palabraBuscar = event.target.value.toLowerCase();
+
+    for (tarea of arrayTareas) {
+        let titulo = tarea.titulo.toLowerCase();
+        if (titulo.includes(palabraBuscar)) {
+            arrayFiltroTareas.push(tarea)
+        }
+
+    }
+
+    ul.innerHTML = '';
+    for (filtroTarea of arrayFiltroTareas) {
+
+        mostrarTarea(filtroTarea)
     }
 
 }
