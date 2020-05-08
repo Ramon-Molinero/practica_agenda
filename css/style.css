@@ -1,3 +1,19 @@
 main div.card-header {
-    background-color: rgb(211, 213, 214);
+    background-color: #a8c4ce;
+}
+
+#alerta {
+    display: none;
+}
+
+.bg-diaria {
+    background-color: #91c8dc;
+}
+
+.bg-mensual {
+    background-color: #f0d38d;
+}
+
+.bg-prioridad {
+    background-color: rgb(243, 112, 88);
 }
