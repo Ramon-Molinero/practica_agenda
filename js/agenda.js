@@ -37,6 +37,13 @@ let arrayTareas = new Array({
     'prioridad': 'mensual'
 });
 
+//capturar eventos que necesitamos
+
+btnAnadirTarea.addEventListener('click', anadirTarea)
+inputBuscarTarea.addEventListener('input', filtrarTarea)
+
+// alerta mensaje
+var alerta = document.getElementById('alerta');
 
 // añadimos tarea, condicional de creacion y suma array, mostramos alerta si los campos no estan rellenos
 function anadirTarea() {
@@ -60,5 +67,19 @@ function anadirTarea() {
     }
     inputAnadirTarea.value = ''; // Resetea busqueda
     selectorAnadirTarea.selectedIndex = 0; // Resetea a posicion inicial del selector
+
+}
+
+// Eliminamos la tarea capturando el evento, 
+function eliminarTarea(event) {
+    let idtarea = event.target.dataset.id;
+    let posicion = arrayTareas.findIndex(tarea => {
+        return tarea.titulo == idtarea;
+    })
+
+    arrayTareas.splice(posicion, 1); // elimina del array
+    let htmlEliminar = event.target.parentNode;
+
+    htmlEliminar.parentNode.removeChild(htmlEliminar)
 
 }
