@@ -159,3 +159,28 @@ function filtrarTarea(event) {
     }
 
 }
+
+// filtramos la prioridad como con el filtro por palaba 
+
+function filtrarPrioridad(event) {
+    let arrayFiltroPrioridad = new Array();
+    let seleccion = event.target.value.toLowerCase();
+
+    for (tarea of arrayTareas) {
+        let prioridad = tarea.prioridad;
+        if (prioridad.includes(seleccion)) {
+            arrayFiltroPrioridad.push(tarea);
+        }
+    }
+    ul.innerHTML = '';
+    for (filtro of arrayFiltroPrioridad) {
+
+        mostrarTarea(filtro);
+
+    }
+
+
+}
+
+// arrancamos mostrando las tareas predefinidas
+mostrarTodasTarea(arrayTareas)
