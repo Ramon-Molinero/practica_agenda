@@ -83,3 +83,43 @@ function eliminarTarea(event) {
     htmlEliminar.parentNode.removeChild(htmlEliminar)
 
 }
+
+// asigna prioridad , pinta tarea, crea boton eliminar y evento
+function mostrarTarea(tarea) {
+    let clasePrioridad = '';
+
+    switch (tarea.prioridad) {
+        case 'diaria':
+            clasePrioridad = 'bg-diaria'
+            break;
+        case 'mensual':
+            clasePrioridad = 'bg-mensual'
+            break;
+        case 'prioritaria':
+            clasePrioridad = 'bg-prioridad'
+            break;
+
+    }
+
+    ul.innerHTML += `
+        <li class="row ${clasePrioridad} p-3 mb-2">
+            <h3 class="col-10">${tarea.titulo}</h3>
+            <button data-id="${idTarea}" id="btn-eliminar" class="btn btn-dark col-2" href="#">Eliminar</button>
+        </li>
+        `
+    let btnEliminar = document.querySelectorAll('#btn-eliminar');
+    for (boton of btnEliminar) {
+        boton.addEventListener('click', eliminarTarea);
+
+    }
+
+}
+
+//Mostramos todas las tareas
+function mostrarTodasTarea(listaTareas) {
+    ul.innerHTML = '';
+    for (tarea of listaTareas) {
+        mostrarTarea(tarea)
+    }
+
+}
